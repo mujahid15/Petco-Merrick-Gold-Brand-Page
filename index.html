@@ -21,7 +21,6 @@ img{ width : 100%; }
 .MiCS_container-fluid{
 	width: 100%;
 }
-
 .merrickgold-section__maincontent{
 	margin: 0px;
 	padding: 0px;
@@ -39,46 +38,9 @@ img{ width : 100%; }
 	justify-content: center;
 }
 
-/*slider */
-.hero_slider{		
-	max-width: 100%;
-	margin: 0px;
-	padding: 0px;
-	position: relative;
-}
-.hslider_actions{
-	position: absolute;
-	bottom: 30px;
-	left: 48%;
-}
-.hslider_action_links{
-	
-}
-.hslider_action_links li{
-	display: inline;
-	padding: 2px;
-}
-.hslider_first, .hslider_second, .hslider_third{
-	background-repeat: no-repeat;
-	background-size: cover;	
-	background-position: center;
-	width: 100%;
-	min-height: 530px;
-	max-height: 562px;
-	margin: 0px;
-	padding: 0px;
-}
-.hslider_first{
-	background-image: url(img/hslider_first_bg@2x.png);	
-}
-.hslider_second{
-	background-image: url(img/hslider_second_bg@2x.png);
-	display: none;
-}
-.hslider_third{
-	background-image: url(img/hslider_third_bg@2x.png);
-	display: none;
-}
+
+/****slider styles****/
+
 .MiCS_hslider_content{
 	max-width: 600px;
 	margin: 0 auto;
@@ -109,11 +71,154 @@ img{ width : 100%; }
 	text-decoration: none;
 	color: #001952;
 	font-size: 16px;
-	font-weight: bold;
-	
+	font-weight: bold;	
+	transition: .5s;
 }
-/*slider */
+.hslider_btn_area a:hover{
+	background-color: #051131;
+	color: #FFFFFF;
+}
 
+/** Sliders options **/
+
+	.merrickgold-section__slider--content .slider_first{
+		width: 100%;
+		min-height: 530px;
+		max-height: 562px;
+		background-image: url("img/hslider_first_bg@2x.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	.merrickgold-section__slider--content .slider_second{
+		width: 100%;
+		min-height: 530px;
+		max-height: 562px;
+		background-image: url("img/hslider_second_bg@2x.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.merrickgold-section__slider--content .slider_third{
+		width: 100%;
+		min-height: 530px;
+		max-height: 562px;
+		background-image: url("img/hslider_third_bg@2x.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.merrickgold-section__slider{
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		position: relative;
+	}
+	
+	.merrickgold-section__slides{
+		width : 200%;
+		display: flex;
+	}
+
+	.merrickgold-section__slider input{
+		display: none;
+	}
+
+	.slide{
+		min-width : 100%;
+		transition: 2s;
+	}
+
+	/* Manual navigation */
+	.navigation-manual{
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		bottom: 0;
+		padding: 10px 0 10px 25px;
+		width: 70px;
+		left: 45%;
+	}
+
+	.manual-btn{
+		border : 2px solid #ffffff;
+		padding : 5px;
+		border-radius: 10px;
+		cursor: pointer;
+		transition: 1s;
+
+	}
+
+	.manual-btn:not(:last-child){
+		margin-right: 10px;
+	}
+
+	.manual-btn:hover{
+		background : #C2B4A5;
+	}
+
+	#radio1:checked ~ .first{
+		margin-left : 0;
+	}
+	#radio2:checked ~ .first{
+		margin-left : -100%;
+	}
+	#radio3:checked ~ .first{
+		margin-left : -200%;
+	}
+
+	.navigation-auto{
+		position: absolute;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		bottom: 0;
+		/*background: rgba(255, 255, 255, 0.8);*/
+		padding: 10px 0 10px 25px;
+		width: 70px;
+		left: 45%;
+		border-radius: 5px 5px 0 0;
+	}
+
+	.navigation-auto img{
+		width: 16px;
+		position: absolute;
+		margin: 0 0 0 -75px;
+		bottom: 9px;
+	}
+
+	.navigation-auto div{
+		border : 2px solid #09205c;
+		padding: 5px;
+		border-radius: 10px;
+		transition: 1s;
+	}
+
+	.navigation-auto div:not(:last-child){
+		margin-right: 10px;
+	}
+	.navigation-auto .auto-btn1, .navigation-auto .auto-btn2, .navigation-auto .auto-btn3{
+		background-color: #FFFFFF;
+	}
+	
+	#radio1:checked ~ .navigation-auto .auto-btn1{
+		background: #C2B4A5;
+	}
+	#radio2:checked ~ .navigation-auto .auto-btn2{
+		background: #C2B4A5;
+	}
+	#radio3:checked ~ .navigation-auto .auto-btn3{
+		background: #C2B4A5;
+	}
+/****slider styles****/
+
+
+
+/**** section head subhead ****/
 .merrickgold-section_header{
 	background-image: url(img/merrickgold-section_header_bg@2x.png);
 	background-repeat: no-repeat;
@@ -135,7 +240,7 @@ img{ width : 100%; }
 }
 .merrickgold-section_sub_head p{
 	text-align: center;
-	padding: 35px 0px 10px 20px;
+	padding: 35px 15px;
 	color: #212529;
 	font-size: 18px;
 }
@@ -143,36 +248,72 @@ img{ width : 100%; }
 .merrickgold-section_best_seller_wrapper{
 	align-items: flex-start;
 }
+/**** section head subhead ****/
 
-/*best seller section*/
+
+
+/***** best seller section ****/
 .MiCS_tab_nav_area{
 	border-bottom: 1px solid #021B4E;
 	text-align: center;
+	padding: 0px 30px;
 }
-.MiCS_tab_nav{
-	padding: 25px 0px;
-	list-style: none;
-	width: 100%;
-}
-.MiCS_tab_nav li{
-	display: inline;
-	text-align: center;
-}
-.MiCS_tab_nav a{
-	padding: 15px 60px;
+
+/*dog best seller tabs*/
+.MiCS_tab_item{
+	padding: 15px 55px;
+	margin: 0px 10px;
 	color: #9B9B9B;
 	font-size: 14px;
 	font-weight: bold;
 	text-decoration: none;
+	background-color: #ffffff;
+	border: none;
+	cursor: pointer;
 }
-.MiCS_tab_nav a:hover{
+.MiCS_tab_item:hover{
 	color: #001952;
 	border-bottom: 10px solid #001952;
 }
-.MiCS_tab_nav a:active{
+.MiCS_tab_item.MiCS_tab_item_active{
 	color: #001952;
 	border-bottom: 10px solid #001952;
 }
+.filterBestDogDiv {
+  float: left;
+  display: none;
+}
+/*dog best seller tabs*/
+
+
+/*cat best seller tabs*/
+.MiCS_cat_best_tab_item{
+	padding: 15px 60px;
+	margin: 0px 10px;
+	color: #9B9B9B;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #ffffff;
+	border: none;
+	cursor: pointer;
+}
+.MiCS_cat_best_tab_item:hover{
+	color: #001952;
+	border-bottom: 10px solid #001952;
+}
+.MiCS_cat_best_tab_item.MiCS_cat_best_tab_item_active{
+	color: #001952;
+	border-bottom: 10px solid #001952;
+}
+.filterBestCatDiv {
+  float: left;
+  display: none;
+}
+/*cat best seller tabs*/
+
+
+/*best seller tab content*/
 .merrickgold-section__tab-content{
 	flex-wrap: wrap;
 	padding-top: 40px;
@@ -197,6 +338,7 @@ img{ width : 100%; }
 }
 .MiCS_product_info{
 	height: 60px;	
+	white-space: normal;
 }
 .MiCS_product_title{
 	font-size: 13px;
@@ -208,9 +350,10 @@ img{ width : 100%; }
 	font-size: 16px;
 	font-weight: bold;
 }
-/*best seller section*/
+/*best seller tab content*/
 
-/*product listing*/
+
+/**** product listing dog food and cat food ****/
 .merrickgold-section__product-listing-content{
 	flex-wrap: wrap;
 }
@@ -261,16 +404,12 @@ img{ width : 100%; }
 	color: #001952;
 }
 .MiCS_product_listing_category_area{
-	padding: 46px 0px;
 	text-align: center;
 }
-.MiCS_product_listing_category{
-	list-style: none;
-}
-.MiCS_product_listing_category li{
-	display: inline;
-}
-.MiCS_product_listing_category a{
+
+
+/*dog food tabs*/
+.MiCS_dog_food_tab{
 	margin: 0px 25px;
 	padding: 20px 45px;
 	font-size: 14px;
@@ -281,19 +420,56 @@ img{ width : 100%; }
 	border: 1px solid #082157;
 	border-radius: 30px;
 	transition: .5s;
+	cursor: pointer;
 }
-.MiCS_product_listing_category a:hover{
+.MiCS_dog_food_tab:hover{
 	background-color: #082157;
 	color: #ffffff;
 }
-.MiCS_product_listing_category a:active{
+.MiCS_dog_food_tab.MiCS_dog_food_tab_active{
 	background-color: #082157;
 	color: #ffffff;
 }
+.filterDogFoodDiv{
+	float: left;
+	display: none;
+}
+/*dog food tabs*/
 
-/*product listing*/
 
-/*banner */
+/*cat food tabs*/
+.MiCS_cat_food_tab{
+	margin: 0px 25px;
+	padding: 20px 45px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #082157;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: 1px solid #082157;
+	border-radius: 30px;
+	transition: .5s;
+	cursor: pointer;
+}
+.MiCS_cat_food_tab:hover{
+	background-color: #082157;
+	color: #ffffff;
+}
+.MiCS_cat_food_tab.MiCS_cat_food_tab_active{
+	background-color: #082157;
+	color: #ffffff;
+}
+.filterCatFoodDiv{
+	float: left;
+	display: none;
+}
+/*cat food tabs*/
+
+/*****product listing*****/
+
+
+
+/****banner video and image ****/
 .MiCS_banner{
 	background-color: #F4F7FF;
 	min-height: 370px;
@@ -327,7 +503,20 @@ img{ width : 100%; }
 	font-size: 16px;
 	line-height: 22px;
 }
-/*banner */
+/****banner video and image ****/
+
+
+
+@media only screen and (min-width:1600px){
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
 
 /*small screens*/
 @media screen and (max-width: 767px) {
@@ -339,72 +528,304 @@ img{ width : 100%; }
 			overflow-y: auto;
 		}
 }
+@media screen and (max-width: 480px) {
 
+
+}
+
+@media screen and (min-width:480px) and (max-width: 767px) {
+
+	}
+@media screen and (min-width:320px) and (max-width: 414px) {
+		
+
+	}
+@media screen and (max-width: 360px) {
+
+}
+@media screen and (max-width: 320px) {
+	
+	.MiCS_container{
+				max-width: 300px;
+				margin: 25px auto;
+			}	
+	/*slider*/
+	.merrickgold-section__slider{
+		max-width: 320px;
+	}
+	.merrickgold-section__slider--content .slider_first{
+		margin-left: -10%;
+		/*max-width: 320px;*/
+		min-height: 600px;
+		background-image: url("img/hslider_first_mobile_bg@2x.png");
+	}
+	.merrickgold-section__slider--content .slider_second{
+		margin-left: -10%;
+		/*max-width: 320px;*/
+		min-height: 600px;
+		background-image: url("img/hslider_first_mobile_bg@2x.png");
+	}
+	.merrickgold-section__slider--content .slider_third{
+		margin-left: -10%;
+		/*max-width: 320px;*/
+		min-height: 600px;
+		background-image: url("img/hslider_first_mobile_bg@2x.png");
+	}
+	.MiCS_hslider_content {
+		max-width: 250px;
+		padding-top: 185px;
+	}
+	.MiCS_hslider_content img {
+		display: none;
+	}
+	.MiCS_hslider_content h1 {
+		font-size: 25px;
+	}
+	.MiCS_hslider_content p {
+		max-width: 250px;
+		padding: 10px 0px;
+		font-size: 12px;
+	}
+	.hslider_btn_area.merrickgold-flex{
+		flex-wrap: wrap;
+	}
+	.hslider_btn_area a {
+		margin: 7px;
+		padding: 12px 39px;
+		font-size: 10px;
+	}
+	.navigation-auto{
+		display: none;
+	}
+	.navigation-manual{
+		display: none;
+	}
+	/*slider end */	
+	/*section header s*/
+	.merrickgold-section_header h1{
+		font-size: 20px;
+		padding: 44px 16px;
+	}
+	.merrickgold-section_sub_head p{
+		font-size: 14px;
+	}
+	/*section header e*/
+
+	/*dog best seller tabs*/
+	.MiCS_tab_item{
+		padding: 15px 25px;
+		font-size: 12px;
+	}
+	.MiCS_tab_item{
+		padding: 15px 25px;
+		font-size: 12px;
+	}
+	.MiCS_tab_item:hover{
+		border-bottom: 6px solid #001952;
+	}
+	.MiCS_tab_item.MiCS_tab_item_active{
+		border-bottom: 6px solid #001952;
+	}
+	/*dog best seller tabs e*/
+
+	/catg best seller tabs*/
+	.MiCS_cat_best_tab_item{
+		padding: 15px 25px;
+		font-size: 12px;
+	}
+	.MiCS_cat_best_tab_item{
+		padding: 15px 25px;
+		font-size: 12px;
+	}
+	.MiCS_cat_best_tab_item:hover{
+		border-bottom: 6px solid #001952;
+	}
+	.MiCS_cat_best_tab_item.MiCS_cat_best_tab_item_active{
+		border-bottom: 6px solid #001952;
+	}
+	/*cat best seller tabs e*/
+
+	/*tab contnets*/
+	.merrickgold-section__tab_content_item{
+		width: 224px;
+	}
+	.MiCS_best_seller_product_image{
+		width: 224px;
+		height: 225px;
+	}
+	.MiCS_best_seller_product_image img{
+		width: 224px;
+		height: 225px;
+	}
+	/*tab contnets e*/
+	.MiCS_tab_nav_area_border{
+		width: 320px;
+		height: 60px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+	.merrickgold-section__tab-content.merrickgold-flex{
+		flex-wrap: nowrap;
+		justify-content: left;
+	}
+	.merrickgold-section__tab-content{
+				width: 320px;
+				height: 380px;
+				padding: 0px;
+				overflow-x: auto;
+				overflow-y: hidden;
+				white-space: nowrap;
+	}
+	.MiCS_product_button{
+		font-size: 12px;
+	}
+	/*tab conent*/
+
+
+	/*product listing */
+	.MiCS_product_listing_category_area {
+		width: 320px;
+		height: 60px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}	
+	.MiCS_dog_food_tab{
+		margin: 0px 8px;
+		padding: 10px 25px;
+		font-size: 10px;
+		
+	}
+	.merrickgold-section__product-listing-content.merrickgold-flex{
+		flex-wrap: nowrap;
+		justify-content: left;
+	}
+	.merrickgold-section__product-listing-content{
+		width: 320px;
+		height: 370px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+
+	.merrickgold-section__listed_product_item{
+		width: 226px;
+		height: 340px;
+		margin-top: 0px;
+	}
+	.MiCS_listing_product{
+		height: 300px;
+	}
+	.MiCS_listing_product_image{
+		width: 226px;
+		height: 160px;
+	}
+	.MiCS_listing_product_image img{
+		width: 226px;
+		height: 160px;
+	}
+	.MiCS_listing_product_details{
+		white-space: normal;
+	}
+	.MiCS_listing_product_button{
+		padding: 12px 20px;
+		font-size: 14px;
+	}
+	/*product listing */
+
+
+
+	/* banner */
+	.MiCS_banner>.merrickgold-flex{
+		flex-wrap: wrap;
+	}
+	.MiCS_banner_headline{
+		font-size: 16px;
+	}
+	.MiCS_banner_description{
+		font-size: 12px;
+	}
+	/**banner e*/
+
+}
+
+.show {
+  display: block;
+}
 </style>
-<!-- Merrick Gold Brand Page -->
 <div class="merrickgold-section">
-	<!-- ======Hero slider start====== -->
-	<div class="merrickgold-section__slider container-fluid hero_slider">
-		<!-- Hero slider inner -->
-		<div class="hslider_inner">
-			<!-- Hero slider single item -->
-			<div class="hslider_item hslider_first">
-				<div class="MiCS_hslider_content">
-					<img src="img/merrickgold-logo@2x.png">
-					<h1>TRY THE MERRICK DIFFERENCE</h1>
-					<p>Making the right choice is easy with Merrick. Choose from a variety of options, including Grain Free or with Healthy Grains recipes.</p>
-					<div class="hslider_btn_area merrickgold-flex">
-						<a class="hslider_btn MiCS_left" href="">Shop Dog</a>
-						<a class="hslider_btn MiCS_right" href="">Shop Cat</a>
-					</div>					
-				</div>	
-			</div>	
-			<!-- Hero slider single item -->
-
-			<!-- Hero slider single item -->
-			<div class="hslider_item hslider_second">
-				<div class="MiCS_hslider_content">
-					<img src="img/merrickgold-logo@2x.png">
-					<h1>Real Whole Foods</h1>
-					<p>We use premium ingredients from real, whole foods for superior nutrition and delicious taste.</p>
-					<div class="hslider_btn_area">
-						<a class="hslider_btn MiCS_left" href="">Shop Dog</a>
-						<a class="hslider_btn MiCS_right" href="">Shop Cat</a>
-					</div>							
-				</div>	
-			</div>	
-			<!-- Hero slider single item -->
-
-			<!-- Hero slider single item -->
-			<div class="hslider_item hslider_third">
-				<div class="MiCS_hslider_content">
-					<img src="img/merrickgold-logo@2x.png">
-					<h1>FULL SOURCE</h1>
-					<p>Full Source goes full nose-to-tail, utilizing more of the animal for a sustainable, nutrient-rich meal your dog is sure to love.</p>
-					<div class="hslider_btn_area">
-						<a class="hslider_btn MiCS_left" href="">Shop Dog</a>
-					</div>
-				</div>	
-			</div>	
-			<!-- Hero slider single item -->		
-		</div>
-		<!-- Hero slider inner -->
-		<!-- Hero slider actions -->
-		<div class="hslider_actions">
-			<ul class="hslider_action_links">
-				<li class="active"><input type="radio" name="hslider_action"> </li>
-				<li class=""><input type="radio" name="hslider_action"></li>
-				<li class=""><input type="radio" name="hslider_action"></li>
-			</ul>
-		</div>
-	</div>
-	<!-- =====Hero slider====== -->
-	<script>
-		// script for slider
-	</script>
 	<!-- Full Page -->
 	<div class="merrickgold-section__maincontent">
-		<!-- =====Dog Best Seller===== -->
+
+<!-- Merrick Gold Brand Page -->
+		<div class="merrickgold-section__slider">
+			<div class="merrickgold-section__slides">
+				<!-- Radio buttons -->
+				<input type="radio" name="radio-btn" id="radio1">
+				<input type="radio" name="radio-btn" id="radio2">
+				<input type="radio" name="radio-btn" id="radio3">
+
+				<div class="merrickgold-section__slider--content custom-flex slide first">
+					<div class="slider_first">
+						<div class=" MiCS_hslider_content">
+							<img src="img/merrickgold-logo@2x.png">
+							<h1>TRY THE MERRICK DIFFERENCE</h1>
+							<p>Making the right choice is easy with Merrick. Choose from a variety of options, including Grain Free or with Healthy Grains recipes.</p>
+							<div class="hslider_btn_area merrickgold-flex">
+								<a class="hslider_btn MiCS_left" href="">Shop Dog</a>
+								<a class="hslider_btn MiCS_right" href="">Shop Cat</a>
+							</div>					
+						</div>					
+					</div>					
+				</div>
+				<div class="merrickgold-section__slider--content custom-flex slide">
+						<div class="slider_second">
+							<div class=" MiCS_hslider_content">
+								<img src="img/merrickgold-logo@2x.png">
+								<h1>Real Whole Foods</h1>
+								<p>We use premium ingredients from real, whole foods for superior nutrition and delicious taste.</p>
+								<div class="hslider_btn_area merrickgold-flex">
+									<a class="hslider_btn MiCS_left" href="">Shop Dog</a>
+									<a class="hslider_btn MiCS_right" href="">Shop Cat</a>
+								</div>							
+							</div>					
+						</div>					
+				</div>
+				<div class="merrickgold-section__slider--content custom-flex slide">
+						<div class="slider_third">
+								<div class=" MiCS_hslider_content">
+									<img src="img/merrickgold-logo@2x.png">
+									<h1>FULL SOURCE</h1>
+									<p>Full Source goes full nose-to-tail, utilizing more of the animal for a sustainable, nutrient-rich meal your dog is sure to love.</p>
+									<div class="hslider_btn_area merrickgold-flex">
+										<a class="hslider_btn MiCS_left" href="">Shop Dog</a>
+									</div>
+								</div>					
+						</div>
+					</div>
+				<!-- Auto navigation -->
+				<div class="navigation-auto">
+					<!-- <img src="images/nav-icon.png" /> -->
+					<div class="auto-btn1"></div>
+					<div class="auto-btn2"></div>
+					<div class="auto-btn3"></div>
+				</div>  
+				<div class="navigation-manual">
+					<label for="radio1" class="manual-btn"></label>
+					<label for="radio2" class="manual-btn"></label>
+					<label for="radio3" class="manual-btn"></label>
+				</div>
+			</div>
+			<!-- Manual navigation -->
+			<div class="navigation-manual" style="display: none;">
+				<label for="radio1" class="manual-btn"></label>
+				<label for="radio2" class="manual-btn"></label>
+				<label for="radio3" class="manual-btn"></label>
+			</div>
+	</div>
+
+	<!-- =====Dog Best Seller===== -->
 		<div class="MiCS_best_seller_container MiCS_container">
 			<div class="merrickgold-section_header">
 				<h1>DOG FOOD BEST SELLERS</h1>
@@ -416,20 +837,22 @@ img{ width : 100%; }
 				<div class="MiCS_best_seller_content">				
 					<!-- product tab -->
 					<div class="MiCS_tab_container">
+						<div class="MiCS_tab_nav_area_border">	
 						<div class="MiCS_tab_nav_area">
-							<ul class="MiCS_tab_nav ">
-								<li class="MiCS_tab_item"><a href="">All Recipes</a> </li>
-								<li class="MiCS_tab_item"><a href="">Dry Grain Free</a> </li>
-								<li class="MiCS_tab_item"><a href="">Dry Healthy Grains</a> </li>
-								<li class="MiCS_tab_item"><a href="">Wet</a> </li>
-								<li class="MiCS_tab_item"><a href="">Treats</a> </li>
-								<li class="MiCS_tab_item"><a href="">Puppy</a> </li>
-							</ul>
+							<div id="dogBestBtnContainer">
+							  <button class="MiCS_tab_item MiCS_tab_item_active" onclick="filterBestDog('all')"> All Recipes</button>
+							  <button class="MiCS_tab_item" onclick="filterBestDog('dry_grain')"> Dry Grain Free</button>
+							  <button class="MiCS_tab_item" onclick="filterBestDog('dry_healthy')"> Dry Healthy Grains</button>
+							  <button class="MiCS_tab_item" onclick="filterBestDog('wet')"> Wet</button>
+							  <button class="MiCS_tab_item" onclick="filterBestDog('treats')"> Treats</button>
+							  <button class="MiCS_tab_item" onclick="filterBestDog('puppy')"> Puppy</button>
+							</div>
+						</div>
 						</div>
 						<!-- tab content -->
 						<div class="merrickgold-section__tab-content merrickgold-flex">
 							<!-- tab item -->
-							<div class="merrickgold-section__tab_content_item">
+							<div class="merrickgold-section__tab_content_item filterBestDogDiv dry_grain">
 								<div class="MiCS_product">
 									<div class="MiCS_best_seller_product_image">
 										<a href=""><img src="img/dog_food_best1@2x.png"></a>
@@ -442,7 +865,7 @@ img{ width : 100%; }
 							</div>
 							<!-- tab item -->
 							<!-- tab item -->
-							<div class="merrickgold-section__tab_content_item">
+							<div class="merrickgold-section__tab_content_item filterBestDogDiv dry_grain dry_healthy">
 								<div class="MiCS_product">
 									<div class="MiCS_best_seller_product_image">
 										<a href=""><img src="img/dog_food_best2@2x.png"></a>
@@ -455,20 +878,20 @@ img{ width : 100%; }
 							</div>
 							<!-- tab item -->
 							<!-- tab item -->
-							<div class="merrickgold-section__tab_content_item">
+							<div class="merrickgold-section__tab_content_item filterBestDogDiv wet">
 								<div class="MiCS_product">
 									<div class="MiCS_best_seller_product_image">
 										<a href=""><img src="img/dog_food_best3@2x.png"></a>
 									</div>
 									<div class="MiCS_product_info">
-										<a href="" class="MiCS_product_title">Merrick Grain Free Wingaling Wet Dog Food</p>
+										<a href="" class="MiCS_product_title">Merrick Grain Free Wingaling Wet Dog Food</a>
 									</div>	
 										<a href="" class="MiCS_product_button" >Shop Now</a>
 								</div>
 							</div>
 							<!-- tab item -->
 							<!-- tab item -->
-							<div class="merrickgold-section__tab_content_item">
+							<div class="merrickgold-section__tab_content_item filterBestDogDiv treats puppy">
 								<div class="MiCS_product">
 									<div class="MiCS_best_seller_product_image">
 										<a href=""><img src="img/dog_food_best4@2x.png"></a>
@@ -493,6 +916,7 @@ img{ width : 100%; }
 		<div class="MiCS_banner MiCS_video_banner MiCS_container-fluid">
 			<div class="MiCS_container merrickgold-flex">
 					<!-- banner video -->
+
 				<div class="MiCS_video_thumb">
 					<img src="img/video_thumbnail_01@2x.png">
 				</div>
@@ -516,16 +940,17 @@ img{ width : 100%; }
 				<p>Give your dog the best, most nutritious food they can get.</p>
 			</div>			
 			<div class="MiCS_product_listing_category_area">
-				<ul class="MiCS_product_listing_category">
-					<li><a href="">Shop Dry Food</a> </li>
-					<li><a href="">Shop wet food</a> </li>
-					<li><a href="">Shop treats</a> </li>
-				</ul>
+				<div id="dogFoodBtnContainer">
+				  <!-- <button class="MiCS_dog_food_tab MiCS_dog_food_tab_active" onclick="filterDogFood('all')"> All </button> -->
+				  <button class="MiCS_dog_food_tab MiCS_dog_food_tab_active" onclick="filterDogFood('shop_dry_food')"> Shop Dry Food</button>
+				  <button class="MiCS_dog_food_tab" onclick="filterDogFood('shop_wet_food')"> Shop wet food</button>
+				  <button class="MiCS_dog_food_tab" onclick="filterDogFood('shop_treats')"> Shop treats</button>						  
+				</div>					
 			</div>
 			<!-- listed products -->
 			<div class="merrickgold-section__product-listing-content merrickgold-flex">
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_dry_food shop_wet_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food1@2x.png"></a>
@@ -540,7 +965,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_wet_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food2@2x.png"></a>
@@ -555,7 +980,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_dry_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food3@2x.png"></a>
@@ -570,7 +995,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_dry_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food4@2x.png"></a>
@@ -585,7 +1010,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_treats">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food5@2x.png"></a>
@@ -600,7 +1025,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_treats">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food6@2x.png"></a>
@@ -616,7 +1041,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_wet_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food7@2x.png"></a>
@@ -631,7 +1056,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_wet_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food8@2x.png"></a>
@@ -646,7 +1071,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterDogFoodDiv shop_wet_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/dog_food9@2x.png"></a>
@@ -675,18 +1100,20 @@ img{ width : 100%; }
 			<div class="MiCS_best_seller_content">				
 				<!-- product tab -->
 				<div class="MiCS_tab_container">
+					<div class="MiCS_tab_nav_area_border">
 					<div class="MiCS_tab_nav_area">
-						<ul class="MiCS_tab_nav ">
-							<li class="MiCS_tab_item"><a href="">All Recipes</a> </li>
-							<li class="MiCS_tab_item"><a href="">Wet</a> </li>
-							<li class="MiCS_tab_item"><a href="">Dry</a> </li>
-							<li class="MiCS_tab_item"><a href="">Toppers</a> </li>
-						</ul>
+						<div id="catBestBtnContainer">
+						  <button class="MiCS_cat_best_tab_item MiCS_cat_best_tab_item_active" onclick="filterBestCat('all')"> All Recipes</button>
+						  <button class="MiCS_cat_best_tab_item" onclick="filterBestCat('dry')"> Dry</button>
+						  <button class="MiCS_cat_best_tab_item" onclick="filterBestCat('wet')"> Wet</button>
+						  <button class="MiCS_cat_best_tab_item" onclick="filterBestCat('toppers')"> Toppers</button>						  
+						</div>												
+					</div>
 					</div>
 					<!-- tab content -->
 					<div class="merrickgold-section__tab-content merrickgold-flex">
 						<!-- tab item -->
-						<div class="merrickgold-section__tab_content_item">
+						<div class="merrickgold-section__tab_content_item filterBestCatDiv dry">
 							<div class="MiCS_product">
 								<div class="MiCS_best_seller_product_image">
 									<a href=""><img src="img/cat_food_best1@2x.png"></a>
@@ -699,7 +1126,7 @@ img{ width : 100%; }
 						</div>
 						<!-- tab item -->
 						<!-- tab item -->
-						<div class="merrickgold-section__tab_content_item">
+						<div class="merrickgold-section__tab_content_item filterBestCatDiv">
 							<div class="MiCS_product">
 								<div class="MiCS_best_seller_product_image">
 									<a href=""><img src="img/cat_food_best2@2x.png"></a>
@@ -713,7 +1140,7 @@ img{ width : 100%; }
 						</div>
 						<!-- tab item -->
 						<!-- tab item -->
-						<div class="merrickgold-section__tab_content_item">
+						<div class="merrickgold-section__tab_content_item filterBestCatDiv dry">
 							<div class="MiCS_product">
 								<div class="MiCS_best_seller_product_image">
 									<a href=""><img src="img/cat_food_best3@2x.png"></a>
@@ -727,7 +1154,7 @@ img{ width : 100%; }
 						</div>
 						<!-- tab item -->
 						<!-- tab item -->
-						<div class="merrickgold-section__tab_content_item">
+						<div class="merrickgold-section__tab_content_item filterBestCatDiv wet toppers">
 							<div class="MiCS_product">
 								<div class="MiCS_best_seller_product_image">
 									<a href=""><img src="img/cat_food_best4@2x.png"></a>
@@ -756,15 +1183,16 @@ img{ width : 100%; }
 				<p>Choose from a variety of options for your favorite feline.</p>
 			</div>
 			<div class="MiCS_product_listing_category_area">
-				<ul class="MiCS_product_listing_category">
-					<li><a href="">shop Dry Food</a> </li>
-					<li><a href="">shop wet food</a> </li>
-				</ul>
+				<div id="catFoodBtnContainer">
+				  <!-- <button class="MiCS_cat_food_tab MiCS_cat_food_tab_active" onclick="filterCatFood('all')"> All </button> -->
+				  <button class="MiCS_cat_food_tab MiCS_cat_food_tab_active" onclick="filterCatFood('shop_dry_food')"> Shop Dry Food</button>
+				  <button class="MiCS_cat_food_tab" onclick="filterCatFood('shop_wet_food')"> Shop wet food</button>					  
+				</div>				
 			</div>
 			<!-- listed products -->
 			<div class="merrickgold-section__product-listing-content merrickgold-flex">
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterCatFoodDiv shop_dry_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/cat_food1@2x.png"></a>
@@ -778,7 +1206,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterCatFoodDiv shop_wet_food shop_dry_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/cat_food2@2x.png"></a>
@@ -792,7 +1220,7 @@ img{ width : 100%; }
 				</div>
 				<!-- product item -->
 				<!-- product item -->
-				<div class="merrickgold-section__listed_product_item">
+				<div class="merrickgold-section__listed_product_item filterCatFoodDiv shop_wet_food">
 					<div class="MiCS_listing_product">
 						<div class="MiCS_listing_product_image">
 							<a href=""><img src="img/cat_food3@2x.png"></a>
@@ -826,5 +1254,205 @@ img{ width : 100%; }
 	</div>
 </div>
 <!-- Merrick Gold brand page -->
+
+<script type="text/javascript">
+	//slider script
+		let counter = 1;
+		setInterval(function(){
+			document.getElementById('radio' + counter).checked = true;
+			counter++;
+			if(counter > 3){
+				counter = 1;
+			}
+		}, 5000);
+
+
+
+//for Dog best seller tab switcher
+filterBestDog("all")
+function filterBestDog(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterBestDogDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClassBestDog(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClassDogBest(x[i], "show");
+  }
+}
+
+function AddClassDogBest(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function RemoveClassBestDog(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var dogBtnContainer = document.getElementById("dogBestBtnContainer");
+var dogBestbtns = dogBtnContainer.getElementsByClassName("MiCS_tab_item");
+for (var i = 0; i < dogBestbtns.length; i++) {
+  dogBestbtns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("MiCS_tab_item_active");
+    current[0].className = current[0].className.replace(" MiCS_tab_item_active", "");
+    this.className += " MiCS_tab_item_active";
+  });
+}
+//for Dog best seller tab switcher
+
+
+//for Cat best seller tab switcher
+filterBestCat("all")
+function filterBestCat(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterBestCatDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClassBestCat(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClassCatBest(x[i], "show");
+  }
+}
+
+function AddClassCatBest(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function RemoveClassBestCat(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var catBtnContainer = document.getElementById("catBestBtnContainer");
+var catBestBtns = catBtnContainer.getElementsByClassName("MiCS_cat_best_tab_item");
+for (var i = 0; i < catBestBtns.length; i++) {
+  catBestBtns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("MiCS_cat_best_tab_item_active");
+    current[0].className = current[0].className.replace(" MiCS_cat_best_tab_item_active", "");
+    this.className += " MiCS_cat_best_tab_item_active";
+  });
+}
+//for Cat best seller tab switcher
+
+//for Dog food tab switcher
+filterDogFood("all")
+function filterDogFood(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDogFoodDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClassDogFood(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClassDogFood(x[i], "show");
+  }
+}
+
+function AddClassDogFood(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function RemoveClassDogFood(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var dogfoodButtonContainer = document.getElementById("dogFoodBtnContainer");
+var dogFoodbtns = dogfoodButtonContainer.getElementsByClassName("MiCS_dog_food_tab");
+for (var i = 0; i < dogFoodbtns.length; i++) {
+  dogFoodbtns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("MiCS_dog_food_tab_active");
+    current[0].className = current[0].className.replace(" MiCS_dog_food_tab_active", "");
+    this.className += " MiCS_dog_food_tab_active";
+  });
+}
+//for Dog food tab switcher
+
+
+
+//for Cat food tab switcher
+filterCatFood("all")
+function filterCatFood(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterCatFoodDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClassCatFood(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClassCatFood(x[i], "show");
+  }
+}
+
+function AddClassCatFood(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function RemoveClassCatFood(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var catfoodButtonContainer = document.getElementById("catFoodBtnContainer");
+var catFoodbtns = catfoodButtonContainer.getElementsByClassName("MiCS_cat_food_tab");
+for (var i = 0; i < catFoodbtns.length; i++) {
+  catFoodbtns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("MiCS_cat_food_tab_active");
+    current[0].className = current[0].className.replace(" MiCS_cat_food_tab_active", "");
+    this.className += " MiCS_cat_food_tab_active";
+  });
+}
+//for Cat food tab switcher
+
+</script>
+
+
 </body>
 </html>
