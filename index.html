@@ -380,7 +380,6 @@ img{ width : 100%; }
 		flex-wrap: wrap;
 		justify-content: left;
 }
-
 .merrickgold-section__listed_product_item{
 	width: 31%;
 	padding: 2% 1%;
@@ -591,7 +590,11 @@ img{ width : 100%; }
 
 /*small screens*/
 @media screen and (max-width: 767px) {
-
+	.MiCS_container{
+			max-width: 100%;
+			padding: 0px 5%;
+			margin: 25px auto;
+		}	
 	.merrickgold-section_best_seller_wrapper{
 		overflow-y: auto;
 	}
@@ -622,6 +625,12 @@ img{ width : 100%; }
 
 
 @media screen and (max-width: 480px) {
+		.MiCS_container{
+				max-width: 100%;
+				padding: 0px 5%;
+				margin: 25px auto;
+			}	
+
 
 			/*slider*/
 			.merrickgold-section__slider{
@@ -688,19 +697,27 @@ img{ width : 100%; }
 				overflow-y: hidden;
 				white-space: nowrap;
 			}
+			.merrickgold-section__listed_product_item{
+				width: 70%;
+				padding: 1% 0%;
+			}
 			.merrickgold-section__product-listing-content{
-				width: 400%;
+				width: 630%;
 				/*height: 350px;*/
 				padding: 0px;
 				overflow-x: auto;
 				overflow-y: hidden;
 				white-space: nowrap;
 			}
-			.MiCS_listing_product{
+			
+			.merrickgold-section__product-listing-content.cat_listing{
+				width: 210%;
+			}
+/*			.MiCS_listing_product{
 				min-width: 180px;
 				max-width: 180px;
 				height: 280px;
-			}
+			}*/
 
 			/*section header s*/
 			.merrickgold-section_header h1{
@@ -1304,7 +1321,7 @@ img{ width : 100%; }
 			<!-- listed products -->
 		<div class="MiCS_auto_container_fluid">
 			<div class="merrickgold-section_best_seller_wrapper">
-			<div class="merrickgold-section__product-listing-content merrickgold-flex">
+			<div class="merrickgold-section__product-listing-content cat_listing merrickgold-flex">
 				<!-- product item -->
 				<div class="merrickgold-section__listed_product_item filterCatFoodDiv shop_dry_food">
 					<div class="MiCS_listing_product">
